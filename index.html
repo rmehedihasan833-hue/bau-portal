@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শীঘ্রই আসছে - একোয়াকালচার পোর্টাল</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ফন্ট সেটআপ */
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'SolaimanLipi', 'Hind Siliguri', sans-serif;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* মৎস্য থিম অনুযায়ী ব্যাকগ্রাউন্ড গ্রেডিয়েন্ট (গভীর সমুদ্রের আভা) */
+            background: linear-gradient(180deg, #005c97 0%, #363795 100%);
+        }
+
+        /* অ্যানিমেটেড বাবলস (পানির বুদবুদ ইফেক্ট) */
+        .bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: rise 10s infinite ease-in;
+        }
+
+        @keyframes rise {
+            0% { bottom: -100px; transform: translateX(0); }
+            50% { transform: translateX(100px); }
+            100% { bottom: 1080px; transform: translateX(-200px); }
+        }
+
+        /* মেইন কন্টেইনার */
+        .coming-soon-card {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: clamp(30px, 8vw, 60px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 45px rgba(0,0,0,0.2);
+            max-width: 600px;
+            width: 85%;
+            color: #ffffff;
+        }
+
+        .fish-icon {
+            font-size: 60px;
+            color: #4fc3f7;
+            margin-bottom: 20px;
+            animation: swim 3s infinite ease-in-out;
+            display: inline-block;
+        }
+
+        @keyframes swim {
+            0%, 100% { transform: translateX(0) rotate(0deg); }
+            50% { transform: translateX(20px) rotate(10deg); }
+        }
+
+        h1 {
+            font-size: clamp(28px, 6vw, 42px);
+            margin: 0 0 10px 0;
+            color: #e0f7fa;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        p {
+            font-size: clamp(16px, 4vw, 20px);
+            line-height: 1.6;
+            color: #b2ebf2;
+            margin-bottom: 30px;
+        }
+
+        /* প্রগ্রেস বার */
+        .progress-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            height: 12px;
+            width: 100%;
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 75%; /* আপনার প্রজেক্টের কাজের অগ্রগতি অনুযায়ী পরিবর্তন করুন */
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(79, 172, 254, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(79, 172, 254, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(79, 172, 254, 0); }
+        }
+
+        .contact-info {
+            font-size: 14px;
+            opacity: 0.8;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }
+
+        .btn-refresh {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background: #4fc3f7;
+            color: #003049;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-refresh:hover {
+            background: #ffffff;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- পানির বুদবুদ সমূহ -->
+    <div class="bubbles">
+        <div class="bubble" style="left: 10%; animation-duration: 8s;"></div>
+        <div class="bubble" style="left: 20%; animation-duration: 12s; width: 20px; height: 20px;"></div>
+        <div class="bubble" style="left: 35%; animation-duration: 7s;"></div>
+        <div class="bubble" style="left: 50%; animation-duration: 15s; width: 60px; height: 60px;"></div>
+        <div class="bubble" style="left: 70%; animation-duration: 10s;"></div>
+        <div class="bubble" style="left: 85%; animation-duration: 9s; width: 30px; height: 30px;"></div>
+    </div>
+
+    <div class="coming-soon-card">
+        <div class="fish-icon">
+            <i class="fa-solid fa-fish-fins"></i>
+        </div>
+        
+        <h1>খুব শীঘ্রই ওয়েবপোর্টালটি চালুকরণ করা হবে।</h1>
+        <p>আমরা একোয়াকালচার বিভাগের ডিজিটাল পোর্টালটি তৈরির শেষ পর্যায়ে আছি। <br>উন্নত সেবার লক্ষে আমাদের সাথেই থাকুন। <br> <br>
+        সাময়িক অসুবিধার জন্য আমরা দুঃখিত</p>
+
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+
+        <div class="contact-info">
+            <p style="font-size: 15px; margin: 5px 0;">
+                <i class="fa-solid fa-location-dot"></i> একোয়াকালচার বিভাগ, বাংলাদেশ কৃষি বিশ্ববিদ্যালয়
+            </p>
+            <a href="javascript:location.reload()" class="btn-refresh">পেজ রিফ্রেশ করুন</a>
+        </div>
+    </div>
+
+</body>
+</html>
